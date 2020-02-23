@@ -2,20 +2,25 @@ body {
   background-color : white;
 }  
 
+.singlePoke {
+  border: 0.5px solid black;
+  margin: 5px;
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
 .grid {
   display: grid;
+  height: 100%;  
+  grid-template-rows: 1fr 6fr 1fr;
   grid-template-areas:
-    'header header header'
-    'pokemon pokemon pokemon'
-    'footer footer footer';
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-gap: 5px;
-  margin: 0;
+    'h'
+    'p'
+    'f';
+  grid-gap: 3px;
   }
 
 h1 {
-  grid-area: header;
   color: black;
   font-family: Helvetica, sans-serif;
   text-align: right;
@@ -27,35 +32,28 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  grid-area: pic;
 /*   border: 1px solid black; */
   justify-content: center;
   padding: 3em;
 }
 
 
-.grid > div {
-  grid-area: name;
-  padding: 1em 2em;
+.website-grid > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 275px;
+  grid-area: p;
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 2vw;
   font-family: Helvetica, sans-serif;
-/*   border: 1px solid black; */
 }
 
-#seelpic {
-  grid-area: 2 / 1 / 3 / 2;
+footer {
+  font-family: "Comic Sans Ms";
+  font-size: 0.5vw;
+  padding: 2%;
 }
 
-#porypic {
-  grid-area: 2 / 2 / 3 / 3;
+.height, .weight {
+  font-size: 1vw;
 }
-
-#seel {
-  grid-area: 3 / 1 / 4 / 2;
-}
-
-#porygon {
-  grid-area: 3 / 2 / 4 / 3;
-}
-
